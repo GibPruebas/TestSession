@@ -1,5 +1,5 @@
 {
-  "name": "ejercicio25",
+  "name": "HR",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "express": "~4.13.1",
     "express-session": "^1.11.3",
     "hbs": "~3.1.0",
+    "jade": "^1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   }

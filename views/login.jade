@@ -1,0 +1,150 @@
+doctype html
+// Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.2 Author: ClipTheme
+//if IE 8
+  html.ie8.no-js(lang='en')
+//if IE 9
+  html.ie9.no-js(lang='en')
+// [if !IE] <!
+html.no-js(lang='en')
+  // <![endif]
+  // start: HEAD
+  head
+    title G.I.B.
+    // start: META
+    meta(charset='utf-8')
+    //if IE
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,IE=9,IE=8,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(content='', name='description')
+    meta(content='', name='author')
+    // end: META
+    // start: MAIN CSS
+    link(rel='stylesheet', href='assets/plugins/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='assets/plugins/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='assets/plugins/animate.css/animate.min.css')
+    link(rel='stylesheet', href='assets/plugins/iCheck/skins/all.css')
+    link(rel='stylesheet', href='assets/css/styles.css')
+    link(rel='stylesheet', href='assets/css/styles-responsive.css')
+    link(rel='stylesheet', href='assets/plugins/iCheck/skins/all.css')
+    //if IE 7
+      link(rel='stylesheet', href='assets/plugins/font-awesome/css/font-awesome-ie7.min.css')
+    // end: MAIN CSS
+    // start: CSS REQUIRED FOR THIS PAGE ONLY
+    // end: CSS REQUIRED FOR THIS PAGE ONLY
+  // end: HEAD
+  // start: BODY
+  body.login
+    .row
+      .main-login.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4
+        //
+          <div class="logo">
+          <img src="assets/images/logo.png">
+          </div>
+        // start: LOGIN BOX
+        .box-login
+          h3 Global Innovation Business
+          p
+            | Please enter your information to log in
+          form.form-login(action='/login', method='post')
+            .errorHandler.alert.alert-danger.no-display
+              i.fa.fa-remove-sign
+              |  You have some form errors. Please check below..
+            fieldset
+              .form-group
+                span.input-icon
+                  input.form-control(type='text', name='idioma', placeholder='Language')
+                  i.fa.fa-comment
+              .form-group
+                span.input-icon
+                  input.form-control(type='text', name='username', placeholder='Username')
+                  i.fa.fa-user
+              .form-group
+                span.input-icon
+                  input.form-control(type='text', name='empresa', placeholder='Company')
+                  i.fa.fa-institution                  
+              .form-group
+                span.input-icon
+                  input.form-control(type='text', name='sucursal', placeholder='Branch')
+                  i.fa.fa-building                  
+              .form-group.form-actions
+                span.input-icon
+                  input.form-control.password(type='password', name='password', placeholder='Password')
+                  i.fa.fa-lock
+                  a.forgot(href='#')
+                    | I forgot my password
+              .form-actions
+                //
+                  <label for="remember" class="checkbox-inline">
+                  <input type="checkbox" class="grey remember" id="remember" name="remember">
+                  Keep me signed in
+                  </label>
+                button.btn.btn-green.pull-right(type='submit')
+                  | Login 
+                  i.fa.fa-arrow-circle-right
+              //
+                <div class="new-account">
+                Don't have an account yet?
+                <a href="#" class="register">
+                Create an account
+                </a>
+                </div>
+          // start: COPYRIGHT
+          .copyright
+            | 2015 © Global Innovation Business.
+          .copyright
+            | Versión 1.0.0 Vertical Financiera.
+          // end: COPYRIGHT
+        // end: LOGIN BOX
+        // start: FORGOT BOX
+        .box-forgot
+          h3 Forget Password?
+          p
+            | Enter your e-mail address below to reset your password.
+          form.form-forgot
+            .errorHandler.alert.alert-danger.no-display
+              i.fa.fa-remove-sign
+              |  You have some form errors. Please check below..
+            fieldset
+              .form-group
+                span.input-icon
+                  input.form-control(type='email', name='email', placeholder='Email')
+                  i.fa.fa-envelope
+              .form-actions
+                a.btn.btn-light-grey.go-back
+                  i.fa.fa-chevron-circle-left
+                  |  Log-In
+                button.btn.btn-green.pull-right(type='submit')
+                  | Submit 
+                  i.fa.fa-arrow-circle-right
+          // start: COPYRIGHT
+          .copyright
+            | 2015 © Global Innovation Business.
+          // end: COPYRIGHT
+        // end: FORGOT BOX
+    // start: MAIN JAVASCRIPTS
+    //if lt IE 9
+      script(src='assets/plugins/respond.min.js')
+      script(src='assets/plugins/excanvas.min.js')
+      script(type='text/javascript', src='assets/plugins/jQuery/jquery-1.11.1.min.js')
+    // [if gte IE 9] <!
+    script(src='assets/plugins/jQuery/jquery-2.1.1.min.js')
+    // <![endif]
+    script(src='assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js')
+    script(src='assets/plugins/bootstrap/js/bootstrap.min.js')
+    script(src='assets/plugins/iCheck/jquery.icheck.min.js')
+    script(src='assets/plugins/jquery.transit/jquery.transit.js')
+    script(src='assets/plugins/TouchSwipe/jquery.touchSwipe.min.js')
+    script(src='assets/js/main.js')
+    // end: MAIN JAVASCRIPTS
+    // start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
+    script(src='assets/plugins/jquery-validation/dist/jquery.validate.min.js')
+    script(src='assets/js/login.js')
+    // end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
+    script.
+      jQuery(document).ready(function() {
+      Main.init();
+      Login.init();
+      });
+  // end: BODY
