@@ -101,22 +101,10 @@ var Login = function() {
 		var errorHandler = $('.errorHandler', form);
 		form.validate({
 			rules : {
-				idioma : {
-					minlength : 2,
-					required : true
-				},
 				username : {
 					minlength : 2,
 					required : true
 				},
-				empresa : {
-					minlength : 2,
-					required : true
-				},
-				sucursal : {
-					minlength : 2,
-					required : true
-				},				
 				password : {
 					minlength : 6,
 					required : true

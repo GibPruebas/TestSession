@@ -43,9 +43,13 @@ html.no-js(lang='en')
         // start: 500
         .col-sm-12.page-error.animated.shake
           .error-number.text-red
-            | Not authorized
+            //| Not authorized
+            |stop
+            br
+            br           
           .error-details.col-sm-6.col-sm-offset-3
-            h3 Oops! You are stuck at 500
+            //h3 Oops! You are stuck at 500
+            h3 Oops! You are't authorized
             p
               | Something's wrong!
               br
@@ -57,7 +61,7 @@ html.no-js(lang='en')
               br
               br  
             h3                  
-              a(href='/login')  Login
+              a(href='/')  Login
             
         // end: 500
     // end: PAGE
