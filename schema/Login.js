@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
 
 var loginSchema = new mongoose.Schema({
-	idioma:String,
-	username:String,
-	empresa:String,
-	sucursal:String,
-	password:String,
+	Idioma:String,
+	UserName:String,
+	Empresa:String,
+	Sucursal:String,
+	Password:String,
+	Fecha: { type: Date, default: Date.now }
 });
 var Login = mongoose.model('login', loginSchema);
 module.exports=Login;

@@ -106,7 +106,7 @@ html(lang='en')
             h2 My Info
             address.margin-bottom-40
               | #{assets} 
-              | Peter Clark
+              | #{usuario}
               br
               |               12345 Street Name, City Name, United States
               br
@@ -144,7 +144,7 @@ html(lang='en')
               li.dropdown.current-user
                 a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
                   img.img-circle(src='assets/images/avatar-1-small.jpg', alt='')
-                  span.username.hidden-xs Peter Clark
+                  span.username.hidden-xs #{usuario}
                   i.fa.fa-caret-down
                 ul.dropdown-menu.dropdown-dark
                   li
@@ -184,7 +184,7 @@ html(lang='en')
                 img(src='assets/images/avatar-1.jpg', alt='')
               .inline-block
                 h5.no-margin  #{welcome} 
-                h4.no-margin  Peter Clark 
+                h4.no-margin  #{usuario} 
                 a.btn.user-options.sb_toggle
                   i.fa.fa-cog
             // start: MAIN NAVIGATION MENU
@@ -1348,7 +1348,7 @@ html(lang='en')
                     .padding-10
                       img.img-circle.pull-left(width='50', height='50', alt='', src='assets/images/avatar-1-big.jpg')
                       h4.no-margin.inline-block.padding-5
-                        | Peter Clark 
+                        | #{usuario} 
                         span.block.text-small.text-left UI Designer
                       .pull-right.padding-15
                         span.text-small.text-bold.text-green
@@ -1390,7 +1390,7 @@ html(lang='en')
                                     img.img-circle(src='assets/images/avatar-1.jpg', alt='image')
                                   td
                                     span.text-small.block.text-light UI Designer
-                                    span.text-large Peter Clark
+                                    span.text-large #{usuario}
                                     a.btn(href='#')
                                       i.fa.fa-pencil
                                   td.center

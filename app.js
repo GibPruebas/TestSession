@@ -4,8 +4,30 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+//Session
 var session = require('express-session');
+//Lenguaje
+require('./system/prototype');
+global.config = require('./config');
+global.i18n = require('./system/helpers/i18n');
+global.i18n.setLanguage();
+
+//app.disable('etag');
+
+//Base de Datos
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://'+global.config.db.host+':'+global.config.db.port+'/'+global.config.db.database);
+//mongoose.connect("mongodb://localhost:27017/test");
+db = mongoose.connection;
+var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  console.log('Conectado');
+ // console.log(__dirname);
+//console.log(__filename);
+});
+
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
