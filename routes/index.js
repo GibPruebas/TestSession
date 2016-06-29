@@ -25,6 +25,13 @@ router.post('/login', function(req, res, next) {
     var Sucursal  = req.body.sucursal;
     var Password  = req.body.password
 
+    console.log(Idioma);
+    console.log(UserName);
+    console.log(Empresa);
+    console.log(Sucursal);
+    console.log(Password);
+
+
     var newLogin      = new Login();
     newLogin.Idioma   =Idioma;
     newLogin.UserName =UserName;
@@ -52,7 +59,9 @@ router.post('/login', function(req, res, next) {
       console.log('Autorizado');
       req.session.UserName=UserName;
       req.session.Idioma=Idioma;
-      console.log(req.session);
+      console.log(req.session.UserName);
+      console.log(req.session.Idioma);
+      global.i18n.setLanguage(req.session.Idioma);
       res.redirect('/dashboard');  
       }
       });   
@@ -61,7 +70,10 @@ router.post('/login', function(req, res, next) {
 router.get('/dashboard',isAuthenticated, function(req, res) {
           //res.redirect('dashboard'  
       
+
       global.i18n.setLanguage(req.session.Idioma);  
+      console.log(req.session.Idioma);
+      console.log(req.session.UserName);
 
       res.render('dashboard', {
       usuario:    req.session.UserName,
@@ -79,4 +91,27 @@ router.get('/logout', function(req, res, next) {
   req.session.destroy()
   res.render('login'); 
 });
+
+
+router.get('/personas',function(req,res){
+
+console.log(req.session.Idioma);
+      console.log(req.session.UserName);
+      global.i18n.setLanguage(req.session.Idioma);  
+
+      res.render('personas', {
+      usuario:    req.session.UserName,
+      hi:           global.lang.site.hi,
+      welcome:      global.lang.site.welcome,
+      people:       global.lang.site.people,
+      commercial:   global.lang.site.commercial,
+      finances:     global.lang.site.finances,
+      treasury:     global.lang.site.treasury,
+      accounting:   global.lang.site.accounting
+              });
+    //res.render('./personas');
+    //res.end;
+});
+
+
 module.exports = router;

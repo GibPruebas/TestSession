@@ -28,7 +28,6 @@ db.once('open', function callback () {
 });
 
 
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -46,7 +45,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({secret: '123456', resave: true, saveUninitialized: true}));
+app.use(session({secret: '123456', path    : '/', httpOnly: false,maxAge  : 24*60*60*1000, resave: true, saveUninitialized: true}));
 
 app.use('/', routes);
 app.use('/users', users);

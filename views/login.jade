@@ -4,9 +4,9 @@ doctype html
   html.ie8.no-js(lang='en')
 //if IE 9
   html.ie9.no-js(lang='en')
-// [if !IE] <!
+// [if !IE] 
 html.no-js(lang='en')
-  // <![endif]
+  // end if IE 9
   // start: HEAD
   head
     title G.I.B.
@@ -32,6 +32,13 @@ html.no-js(lang='en')
       link(rel='stylesheet', href='assets/plugins/font-awesome/css/font-awesome-ie7.min.css')
     // end: MAIN CSS
     // start: CSS REQUIRED FOR THIS PAGE ONLY
+    link(rel='stylesheet', href='assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')
+    link(rel='stylesheet', href='assets/plugins/select2/select2.css')
+    link(rel='stylesheet', href='assets/plugins/datepicker/css/datepicker.css')
+    link(rel='stylesheet', href='assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css')
+    link(rel='stylesheet', href='assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css')
+    link(rel='stylesheet', href='assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css')
+    link(rel='stylesheet', href='assets/plugins/jQuery-Tags-Input/jquery.tagsinput.css')
     // end: CSS REQUIRED FOR THIS PAGE ONLY
   // end: HEAD
   // start: BODY
@@ -54,20 +61,26 @@ html.no-js(lang='en')
             fieldset
               .form-group
                 span.input-icon
-                  input.form-control(type='text', name='idioma', placeholder='Language')
-                  i.fa.fa-comment
+                  select(name="idioma")#idioma.form-control
+                    option(value='es', selected='') Español
+                    option(value='in') Ingles
+                    option(value='fr') Francés
+                    option(value='pt') Portugués
+                    option(value='ru') Ruso
+                    option(value='de') Alemán
+                    option(value='zh') Chino
               .form-group
                 span.input-icon
                   input.form-control(type='text', name='username', placeholder='Username')
                   i.fa.fa-user
               .form-group
                 span.input-icon
-                  input.form-control(type='text', name='empresa', placeholder='Company')
-                  i.fa.fa-institution                  
+                  select(name="empresa")#empresa.form-control
+                    option(value='DEMO', selected='') Empresa de Demostración
               .form-group
                 span.input-icon
-                  input.form-control(type='text', name='sucursal', placeholder='Branch')
-                  i.fa.fa-building                  
+                  select(name="sucursal")#sucursal.form-control
+                    option(value='SUCURSAL', selected='') Sucursal de Demostración
               .form-group.form-actions
                 span.input-icon
                   input.form-control.password(type='password', name='password', placeholder='Password')
@@ -92,9 +105,9 @@ html.no-js(lang='en')
                 </div>
           // start: COPYRIGHT
           .copyright
-            | 2015 © Global Innovation Business.
+            | 2016 © Global Innovation Business.
           .copyright
-            | Versión 1.0.0 Vertical Financiera.
+            | Versión 1.0.0.
           // end: COPYRIGHT
         // end: LOGIN BOX
         // start: FORGOT BOX
@@ -120,7 +133,7 @@ html.no-js(lang='en')
                   i.fa.fa-arrow-circle-right
           // start: COPYRIGHT
           .copyright
-            | 2015 © Global Innovation Business.
+            | 2016 © Global Innovation Business.
           // end: COPYRIGHT
         // end: FORGOT BOX
     // start: MAIN JAVASCRIPTS
@@ -128,9 +141,9 @@ html.no-js(lang='en')
       script(src='assets/plugins/respond.min.js')
       script(src='assets/plugins/excanvas.min.js')
       script(type='text/javascript', src='assets/plugins/jQuery/jquery-1.11.1.min.js')
-    // [if gte IE 9] <!
+    // [if gte IE 9] 
     script(src='assets/plugins/jQuery/jquery-2.1.1.min.js')
-    // <![endif]
+    // end if lt IE 9
     script(src='assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js')
     script(src='assets/plugins/bootstrap/js/bootstrap.min.js')
     script(src='assets/plugins/iCheck/jquery.icheck.min.js')
@@ -141,6 +154,23 @@ html.no-js(lang='en')
     // start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
     script(src='assets/plugins/jquery-validation/dist/jquery.validate.min.js')
     script(src='assets/js/login.js')
+    script(src='assets/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js')
+    script(src='assets/plugins/autosize/jquery.autosize.min.js')
+    script(src='assets/plugins/select2/select2.min.js')
+    script(src='assets/plugins/jquery.maskedinput/src/jquery.maskedinput.js')
+    script(src='assets/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js')
+    script(src='assets/plugins/jquery-maskmoney/jquery.maskMoney.js')
+    script(src='assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')
+    script(src='assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js')
+    script(src='assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js')
+    script(src='assets/plugins/bootstrap-colorpicker/js/commits.js')
+    script(src='assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js')
+    script(src='assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')
+    script(src='assets/plugins/jQuery-Tags-Input/jquery.tagsinput.js')
+    script(src='assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js')
+    script(src='assets/plugins/ckeditor/ckeditor.js')
+    script(src='assets/plugins/ckeditor/adapters/jquery.js')
+    script(src='assets/js/form-elements.js')
     // end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
     script.
       jQuery(document).ready(function() {
