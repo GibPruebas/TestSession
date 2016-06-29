@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Login=require('../Schema/Login');
-var LoginUsuario=require('../Schema/Usuario');
+var Login=require('../schema/Login');
+var LoginUsuario=require('../schema/Usuario');
 var languages = global.config.application.languages;
 
 function isAuthenticated (req,res,next){
