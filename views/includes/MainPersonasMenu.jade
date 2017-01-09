@@ -1,0 +1,101 @@
+// start: TO-DO DROPDOWN
+li.dropdown
+  a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
+    i.fa.fa-file-text
+    |  Documento
+  ul.dropdown-menu.dropdown-light.dropdown-subview
+    li
+      a(href='')
+        span.fa-stack
+          i.fa.fa-user.fa-stack-1x.fa-lg
+          i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
+        |  Nuevo Registro
+    li
+      a(href='')
+        span.fa-stack
+          i.fa.fa-user.fa-stack-1x.fa-lg
+          i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
+        |  Ver Registros
+li.dropdown
+  a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
+    i.fa.fa-wrench
+    |  Herramientas
+  ul.dropdown-menu.dropdown-light.dropdown-subview
+    li
+      a(href='')
+        span.fa-stack
+          i.fa.fa-user.fa-stack-1x.fa-lg
+          i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
+        |  Carga Masiva
+    li.dropdown-header
+      | Verificar
+    li
+      a(href='')
+        span.fa-stack
+          i.fa.fa-thumbs-down.fa-stack-1x.fa-lg
+        | Lista Negra
+    li
+      a(href='')
+        span.fa-stack
+          i.fa.fa-bullseye.fa-stack-1x.fa-lg
+        | Lista P.E.P.
+    li
+      a(href='')
+        span.fa-stack
+          i.fa.fa-bank.fa-stack-1x.fa-lg
+        | Buro Crédito
+li.dropdown
+  a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
+    i.fa.fa-plus
+    |  Otros
+    .tooltip-notification.hide
+      .tooltip-notification-arrow
+      .tooltip-notification-inner
+        div
+          .semi-bold
+            | HI THERE!
+          .message
+            | Try the Subview Live Experience
+  ul.dropdown-menu.dropdown-light.dropdown-subview
+    li.dropdown-header
+      | Notes
+    li
+      a.new-note(href='#newNote')
+        span.fa-stack
+          i.fa.fa-file-text-o.fa-stack-1x.fa-lg
+          i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
+        |  Add new note
+    li
+      a.read-all-notes(href='#readNote')
+        span.fa-stack
+          i.fa.fa-file-text-o.fa-stack-1x.fa-lg
+          i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
+        |  Read all notes
+    li.dropdown-header
+      | Calendar
+    li
+      a.new-event(href='#newEvent')
+        span.fa-stack
+          i.fa.fa-calendar-o.fa-stack-1x.fa-lg
+          i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
+        |  Add new event
+    li
+      a.show-calendar(href='#showCalendar')
+        span.fa-stack
+          i.fa.fa-calendar-o.fa-stack-1x.fa-lg
+          i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
+        |  Show calendar
+    li.dropdown-header
+      | Contributors
+    li
+      a.new-contributor(href='#newContributor')
+        span.fa-stack
+          i.fa.fa-user.fa-stack-1x.fa-lg
+          i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
+        |  Add new contributor
+    li
+      a.show-contributors(href='#showContributors')
+        span.fa-stack
+          i.fa.fa-user.fa-stack-1x.fa-lg
+          i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
+        |  Show all contributo

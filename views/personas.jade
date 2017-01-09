@@ -1,5 +1,6 @@
+﻿
 doctype html
-// Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.2 Author: ClipTheme
+// 
 //if IE 8
   html.ie8(lang='en')
 //if IE 9
@@ -31,6 +32,9 @@ html(lang='en')
     // end: CORE CSS
 
     link(rel='shortcut icon', href='favicon.ico')
+    script(src="public/sweetalert/dist/sweetalert.min.js")
+    link(rel="stylesheet" type="text/css" href="public/sweetalert/dist/sweetalert.css")
+  
   // end: HEAD
   // start: BODY
   body
@@ -196,7 +200,7 @@ html(lang='en')
               i.fa.fa-dot-circle-o.text-green
               span Online
           .col-xs-6.text-right.no-padding
-            a.btn.btn-sm.log-out.text-right(href='login_login.html')
+            a.btn.btn-sm.log-out.text-right(href='/logout')
               i.fa.fa-power-off
               |  Log Out
       // end: PAGESLIDE LEFT
@@ -518,110 +522,9 @@ html(lang='en')
                   i.fa.fa-times
                   |  CLOSE
                 .toolbar-tools.pull-right
-                  // start: TOP NAVIGATION MENU
                   ul.nav.navbar-right
-                    // start: TO-DO DROPDOWN
-                    li.dropdown
-                      a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
-                        i.fa.fa-file-text
-                        |  Documento
-                      ul.dropdown-menu.dropdown-light.dropdown-subview
-                        li
-                          a(href='')
-                            span.fa-stack
-                              i.fa.fa-user.fa-stack-1x.fa-lg
-                              i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Nuevo Registro
-                        li
-                          a(href='')
-                            span.fa-stack
-                              i.fa.fa-user.fa-stack-1x.fa-lg
-                              i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Ver Registros
-                    li.dropdown
-                      a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
-                        i.fa.fa-wrench
-                        |  Herramientas
-                      ul.dropdown-menu.dropdown-light.dropdown-subview
-                        li
-                          a(href='')
-                            span.fa-stack
-                              i.fa.fa-user.fa-stack-1x.fa-lg
-                              i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Carga Masiva
-                        li.dropdown-header
-                          | Verificar
-                        li
-                          a(href='')
-                            span.fa-stack
-                              i.fa.fa-thumbs-down.fa-stack-1x.fa-lg
-                            | Lista Negra
-                        li
-                          a(href='')
-                            span.fa-stack
-                              i.fa.fa-bullseye.fa-stack-1x.fa-lg
-                            | Lista P.E.P.
-                        li
-                          a(href='')
-                            span.fa-stack
-                              i.fa.fa-bank.fa-stack-1x.fa-lg
-                            | Buro Crédito
-                    li.dropdown
-                      a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-close-others='true', href='#')
-                        i.fa.fa-plus
-                        |  Otros
-                        .tooltip-notification.hide
-                          .tooltip-notification-arrow
-                          .tooltip-notification-inner
-                            div
-                              .semi-bold
-                                | HI THERE!
-                              .message
-                                | Try the Subview Live Experience
-                      ul.dropdown-menu.dropdown-light.dropdown-subview
-                        li.dropdown-header
-                          | Notes
-                        li
-                          a.new-note(href='#newNote')
-                            span.fa-stack
-                              i.fa.fa-file-text-o.fa-stack-1x.fa-lg
-                              i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Add new note
-                        li
-                          a.read-all-notes(href='#readNote')
-                            span.fa-stack
-                              i.fa.fa-file-text-o.fa-stack-1x.fa-lg
-                              i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Read all notes
-                        li.dropdown-header
-                          | Calendar
-                        li
-                          a.new-event(href='#newEvent')
-                            span.fa-stack
-                              i.fa.fa-calendar-o.fa-stack-1x.fa-lg
-                              i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Add new event
-                        li
-                          a.show-calendar(href='#showCalendar')
-                            span.fa-stack
-                              i.fa.fa-calendar-o.fa-stack-1x.fa-lg
-                              i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Show calendar
-                        li.dropdown-header
-                          | Contributors
-                        li
-                          a.new-contributor(href='#newContributor')
-                            span.fa-stack
-                              i.fa.fa-user.fa-stack-1x.fa-lg
-                              i.fa.fa-plus.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Add new contributor
-                        li
-                          a.show-contributors(href='#showContributors')
-                            span.fa-stack
-                              i.fa.fa-user.fa-stack-1x.fa-lg
-                              i.fa.fa-share.fa-stack-1x.stack-right-bottom.text-danger
-                            |  Show all contributor
-                  // end: TOP NAVIGATION MENU
+                    // start: TOP NAVIGATION MENU
+                    include ./includes/MainPersonasMenu.jade 
                     // end: TOP NAVIGATION MENU
             // end: TOOLBAR
             // end: PAGE HEADER
@@ -633,7 +536,7 @@ html(lang='en')
                     a(href='#')
                       | Dashboard
                   li.active
-                    | Form Validation
+                    | Personas
             // end: BREADCRUMB
             // start: PAGE CONTENT
             .row
@@ -821,6 +724,7 @@ html(lang='en')
             .subviews-container
         // end: PAGE
       // end: MAIN CONTAINER
+
       // start: FOOTER
       footer.inner
         .footer-inner
@@ -828,6 +732,7 @@ html(lang='en')
             span.go-top
               i.fa.fa-chevron-up
       // end: FOOTER
+
       // start: SUBVIEW SAMPLE CONTENTS
       // *** NEW NOTE ***
       #newNote
@@ -1156,6 +1061,7 @@ html(lang='en')
                           i.fa.fa-times
                           |  Delete
       // end: SUBVIEW SAMPLE CONTENTS
+
     // start: MAIN JAVASCRIPTS
     //if lt IE 9
     include ./includes/MainJavaScripts.jade

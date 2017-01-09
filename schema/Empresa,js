@@ -1,0 +1,27 @@
+var mongoose = require('mongoose');
+
+var EmpresaSchema = new mongoose.Schema({
+Clave:    String,
+Empresa: String,
+Grupo:		String,
+Estatus: String,
+RFC: String,
+Registro: String,
+Representante: String,
+RepreRFC: String,
+RepreCURP: String,
+CFDI: String,
+CFDINoCertificado: String,
+CFDICertificado: String,
+CFDIVersion: String,
+CFDIContrasenaSello: String,
+CFDILlave: String,
+Actividad: String,
+Actividad: String,
+Actividad: String,
+FechaAlta: { type: Date, default: Date.now },
+Usuario: String,
+
+});
+var CatPersonas = mongoose.model('CatPersonas', CatPersonasSchema,'CatPersonas');
+module.exports=CatPersonas;

@@ -98,6 +98,43 @@ router.get('/logout', function(req, res, next) {
 });
 
 
+
+router.get('/PersonasLista',isAuthenticated,function(req,res){
+      var ArrPersonas = new Array();
+
+      console.log(req.session.Idioma);
+      console.log(req.session.UserName);
+      global.i18n.setLanguage(req.session.Idioma);  
+
+    CatPersonas.find({},{_id:1,Nombre0:1,Apellido0:1,Email:1},function(err,Personas){
+      //res.redirect('/Prueba');
+      if(err){
+        console.log(err);
+        return res.status(500).send();
+      } else{
+        ArrPersonas=Personas
+        console.log(ArrPersonas);
+
+        res.render('personasLista', {
+      pArrPersonas: ArrPersonas,    
+      usuario:    req.session.UserName,
+      hi:           global.lang.site.hi,
+      welcome:      global.lang.site.welcome,
+      people:       global.lang.site.people,
+      commercial:   global.lang.site.commercial,
+      finances:     global.lang.site.finances,
+      treasury:     global.lang.site.treasury,
+      accounting:   global.lang.site.accounting,
+
+              });
+      }
+     
+      });
+
+
+      
+});
+
 router.get('/personas',isAuthenticated,function(req,res){
 console.log(req.session.Idioma);
       console.log(req.session.UserName);
@@ -163,8 +200,9 @@ router.post('/personas', function(req, res, next) {
       return res.status(500).send();
     }
       console.log('Redireccionando');
-       res.redirect('/personas');
-    });         
+       res.redirect('/personasLista');
+    });  
+           
 });
 
 

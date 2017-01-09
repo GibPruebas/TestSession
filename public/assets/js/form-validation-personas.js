@@ -1,3 +1,4 @@
+
 var FormValidatorPersonas = function () {
 	"use strict";
 	var validateCheckRadio = function (val) {
@@ -104,7 +105,7 @@ var FormValidatorPersonas = function () {
             },
             submitHandler: function (form) {
                 successHandler1.show();
-                errorHandler1.hide();                
+                errorHandler1.hide();
                 form.submit();
                 // submit form
                 //$('#form').submit();
